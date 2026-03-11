@@ -1,0 +1,140 @@
+:root {
+  --frame-base: #d6e1c7;
+  --frame-freckle: rgba(140, 167, 122, 0.35);
+  --panel: #cfe3d2;
+  --panel-shadow: rgba(88, 106, 90, 0.12);
+  --title: #6f9a75;
+  --text: #6b6b6b;
+  --line: rgba(90, 100, 90, 0.35);
+  --nav-text: #4f5a4f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  color: var(--text);
+  background-color: var(--frame-base);
+  background-image: url("../images/state_license_image.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120% 120%;
+}
+
+.frame {
+  min-height: 100vh;
+  padding: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.panel {
+  width: min(1120px, 100%);
+  min-height: 70vh;
+  background: var(--panel);
+  box-shadow: 0 0 0 1px rgba(85, 100, 85, 0.08), 0 16px 40px var(--panel-shadow);
+  padding: 48px;
+  position: relative;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  gap: 32px;
+  position: relative;
+}
+
+.sidebar {
+  border-right: 1px solid var(--line);
+  padding-right: 24px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: var(--nav-text);
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 6px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: var(--nav-text);
+  font-size: 15px;
+}
+
+.sidebar a.is-active {
+  color: #2f3a2f;
+}
+
+.content {
+  max-width: 600px;
+  line-height: 1.15;
+  font-size: 15px;
+}
+
+.content .name {
+  margin: 0 0 12px;
+  font-size: 26px;
+  letter-spacing: 0.4px;
+  color: rgba(102, 125, 106, 0.45);
+  font-weight: 500;
+}
+
+.content h2 {
+  margin: 0 0 10px;
+  color: var(--title);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.content a {
+  color: var(--title);
+  text-decoration: underline;
+}
+
+.links {
+  margin-top: 22px;
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .frame {
+    padding: 32px;
+  }
+
+  .panel {
+    padding: 28px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding-right: 0;
+    padding-bottom: 18px;
+  }
+
+  .sidebar li {
+    border-top: none;
+  }
+
+  .links {
+    flex-wrap: wrap;
+  }
+  
+}
