@@ -108,6 +108,10 @@ body {
   font-size: 14px;
 }
 
+.blog-content {
+  line-height: 1.5;
+}
+
 @media (max-width: 760px) {
   .frame {
     padding: 32px;
