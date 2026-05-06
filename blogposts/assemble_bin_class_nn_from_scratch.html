@@ -38,25 +38,48 @@
                 <br><br>
                 So I’m not so much building the neural network than I am just assembling it. My process is more akin to following a Lego instruction manual, hence the title. I like to think I’d try doing a second pass sometime in the future where I code it fully from scratch (because that’s a nice thing to say – there’s so little time). Regardless, if we agree with Richard Feynman’s quote “What I cannot create, I do not understand”, trying to build it may help me begin to understand it. 
                 <br><br>
-                <b>A Visualization of the Forward-Pass & Backpropagation, Made As Simple As I Can</b>
+                Here's my code if you'd like to see. Since most of my work is really just the elaborate comments, I felt that uploading this on github would kind of be overkill. 
                 <br><br>
-                <img src="../images/bin_nn_visualization.jpg" alt="bin_nn_visualization", height="600">
-                <br><br>
-                That step of writing legitimately concise self-explanations actually took up the longest time, and is actually what I think made me learn so much from this exercise. 
-                <br><br>
-                -----
+                ----
                 <br><br>
                 <b>Developing intuition and appreciating things</b>
                 <br><br>
-                For my machine learning class, the class is structured loosely around this week-style of schedule: one theory-heavy lecture, one ‘hands-on’ vibe-coding lecture, and a ‘build it from scratch’ lab. Assembling this simple neural network was meant to mimic a more complete and independent iteration of those lab exercises. 
+                For my machine learning class (taught by the very non-chalant <a href="https://scholar.google.com/citations?user=0RAmmIAAAAAJ&hl=en">Prof. Kyunghyun Cho</a>), the class is structured loosely around this week-style of schedule: one theory-heavy lecture, one ‘hands-on’ vibe-coding lecture, and a ‘build it from scratch’ lab. Assembling this simple neural network was meant to mimic a more complete and independent iteration of those lab exercises. 
                 <br><br>
                 I think the hardest part about learning something like the theory behind machine learning is how many moving parts there are. Assuming you have strong mathematical foundations (I do not), you must next tackle the issue of orienting your thought-train around a lot of moving components, and it seems like the only way to get used to seeing how those components are related and why they are designed, chosen, or assembled in such a way is to spend a lot of time looking at how they work up close, and in many different directions. It’s a lot <a href="http://johnsalvatier.org/blog/2017/reality-has-a-surprising-amount-of-detail">like building a stair</a>. A lot of this might seem obvious, and I feel a bit silly writing this down. The reason this feels so profound to me is because I can’t remember the last time I spent 8-10 hours (rough estimate for this exercise) thinking about one single topic, and unrelentingly ironing out as much confusion – no matter how trivial or stupid it sounded – about it. 
                 <br><br>
                 A small voice is telling me that I’ve basically re-discovered what it means to review a subject, and sure, maybe. I think due to time constraints, I’ve basically relegated my studying process to lecture notes (first pass of information) → many reviews (filtering of all the points I’ve missed) → exam review (try to get everything in your head). It’s a decent system and has worked for me so far, but I feel that developing comfortability around a topic i.e. building intuition/maturity is something that gets less prioritized in this studying pipeline. At the very least, I feel not enough of it is retained in the long-term for me. 
                 <br><br>
-                I still feel that I’m not being clear. It’s not that I’m unable to learn content, but I don’t think I have built the flexibility to truly play with its rules. In the past, questions that deviated too far from course structures would often send me into a panic, and they didn’t have to be hard questions, just ones I hadn’t thought too much about. Attempting to answer those questions required straining through complex logic, or torturously sifting through figures and formulas. I could not understand how people – more embarrassingly if they were my peers – were able to answer hard questions on the fly, or simply look at an equation and know what was going on. It was like they were all fluent in this language I could only speak broken sentences of. Am I just too stupid for this? 
+                I still feel that I’m not being clear. It’s not that I’m unable to learn content, but I don’t think I have built the flexibility to truly play with its rules. In the past, questions that deviated too far from course structures would often send me into a panic, and they didn’t have to be hard questions, just ones I hadn’t thought too much about. Attempting to answer those questions required straining through complex logic, or torturously sifting through figures and formulas. I could not understand how people – more embarrassingly if they were my peers – were able to answer hard questions on the fly, or simply look at an equation and know what was going on. It was like they were all fluent in this language I could only speak broken sentences of. Was I just too stupid for all this? 
                 <br><br>
                 I hope not, but seeing as how fun this exercise legitimately was, I am reminded that I don’t have to be smart to appreciate simple complexity. 
+                <br><br>
+                ----
+                <br><br>
+                <b>A Visualization of the Forward-Pass & Backpropagation, Made As Simple As I Can</b>
+                <br><br>
+                <img src="../images/binclass_nn_notes.jpg" alt="binclass_nn_notes", height="600">
+                <br><br>
+                That step of writing legitimately concise self-explanations actually took up the longest time, and is actually what I think made me learn so much from this exercise. 
+                <br><br>
+                
+                <b>A tip for thinking about BC-NN + a complaint:</b> 
+                <ul>
+                  <li>Do not think of the Activation Function (sigmoid), linear layers, and cost functions as discrete chunks of the neural network, but instead as basic building blocks that, when glued in specific ways, create an emergent process (Frontpropogation, Backpropogation). <u>The propagation processes are what the neural network <i>does</i>, and also <i>are</i> the network.</u></li>
+                  <li>I feel like terms used to describe how neural networks work sound very vibey and nebulous (data “flows” forward? Like what does that even really mean). It’s terminology from neuroscience and it kind of tripped me up. </li>
+                </ul>
+                ----
+                <br><br>
+                <b>Here's something cool!</b> 
+                <br><br>
+                The first perceptron (built in 1943) is essentially a single layer version of this binary classification neural network. 
+                <br><br>
+                <img src="../images/perceptron_notes.jpeg" alt="perceptron_notes", height="300">
+                <br><br>
+                Something really interesting I learned over this week is that you can think about linear layers in a perceptron as boolean evaluations (from Logic). But the thing is, because the 1943 perceptron is a single layer neural network (i.e. a lonely, solitary artificial neuron), it can't solve XOR gates (only one but not both) because the options are not linearly separable (in a XOR truth table, the inputs (0,0) and (1,1) output as 0, while (0,1) and (1,0) output as 1 -- this is kind of similar to the Boolean expression evaluations we had to do in Intro to Programming, actually.) 
+                <br><br> 
+                Anyways, if you plot these four classes in a 2D space, you can't draw a straight line that separates the '0' group from the '1' group. Hence, to group them into '0' and '1' groups, you need to alter the perceptron so that it can draw non-linear decision boundaries, i.e. introduce non-linearity to it via adding more layers (so architecturally, I guess would be like adding another neuron). Isn't this overlap in disciplines interesting? 
+
                 
             </p>
 
